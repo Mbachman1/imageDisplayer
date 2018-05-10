@@ -80,9 +80,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BeUqOHO.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\download1.jpg" />
   </ItemGroup>
   <ItemGroup>
