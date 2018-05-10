@@ -12,7 +12,6 @@ namespace KH_Screen_Viewer
 
     public partial class Form1 : Form
     {
-
         public void takeAScreeshot() //This function takes a screenshot of the primary screen and puts it in the pictureBox.
         {
             var mon2 = Screen.AllScreens[0];
@@ -62,6 +61,21 @@ namespace KH_Screen_Viewer
 
         }
 
+        public Screen Screen2 = new object() as Screen;
+        public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2.
+        {
+            if (Screen.AllScreens.Length > 0)
+            {
+                for (int i = 0; i < Screen.AllScreens.Length; i++)
+                {
+                    if (Screen.AllScreens[i].Primary == false)
+                    {
+                      Screen2 = Screen.AllScreens[i];
+                    }
+                }
+            }
+            return(Screen.PrimaryScreen);
+        }
         private void ImageButton1_Click(object sender, EventArgs e)
         {
             if (ImageButton1.BackgroundImage == null)
@@ -71,8 +85,7 @@ namespace KH_Screen_Viewer
             if (Application.OpenForms["Form2"] == null)
             {
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton1.BackgroundImage;
             }
@@ -80,8 +93,7 @@ namespace KH_Screen_Viewer
             {
                 Application.OpenForms["Form2"].Close();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton1.BackgroundImage;
             }
@@ -101,11 +113,12 @@ namespace KH_Screen_Viewer
 
         private void black_Click(object sender, EventArgs e)
         {
+            
             if (Application.OpenForms["Form2"] == null)
             {
+                secondaryScreen();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = KH_Screen_Viewer.Properties.Resources.download;
             }
@@ -113,8 +126,7 @@ namespace KH_Screen_Viewer
             {
                 Application.OpenForms["Form2"].Close();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = KH_Screen_Viewer.Properties.Resources.download;
 
@@ -173,8 +185,7 @@ namespace KH_Screen_Viewer
                 if (Application.OpenForms["Form2"] == null)
             {
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton2.BackgroundImage;
             }
@@ -182,8 +193,7 @@ namespace KH_Screen_Viewer
             {
                 Application.OpenForms["Form2"].Close();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton2.BackgroundImage;
             }
@@ -214,8 +224,7 @@ namespace KH_Screen_Viewer
             if (Application.OpenForms["Form2"] == null)
             {
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton3.BackgroundImage;
             }
@@ -223,8 +232,7 @@ namespace KH_Screen_Viewer
             {
                 Application.OpenForms["Form2"].Close();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton3.BackgroundImage;
             }
@@ -255,8 +263,7 @@ namespace KH_Screen_Viewer
             if (Application.OpenForms["Form2"] == null)
             {
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton4.BackgroundImage;
             }
@@ -264,8 +271,7 @@ namespace KH_Screen_Viewer
             {
                 Application.OpenForms["Form2"].Close();
                 Form2 n = new Form2();
-                Screen[] screens = Screen.AllScreens;
-                setFormLocation(n, screens[0]);
+                setFormLocation(n, Screen2);
                 n.Show();
                 n.displayBox1.Image = ImageButton4.BackgroundImage;
             }
