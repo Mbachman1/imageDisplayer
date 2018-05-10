@@ -9,16 +9,15 @@ using System.Windows.Forms;
 
 namespace KH_Screen_Viewer
 {
-
+    
     public partial class Form1 : Form
     {
         public void takeAScreeshot() //This function takes a screenshot of the primary screen and puts it in the pictureBox.
         {
-            var mon2 = Screen.AllScreens[0];
-            var bmpScreenshot = new Bitmap(mon2.Bounds.Width, mon2.Bounds.Height);
+            var bmpScreenshot = new Bitmap(Screen2.Bounds.Width, Screen2.Bounds.Height);
             var gfxScreenshot = Graphics.FromImage(bmpScreenshot);
 
-            gfxScreenshot.CopyFromScreen(mon2.Bounds.X, mon2.Bounds.Y, 0, 0, mon2.Bounds.Size, CopyPixelOperation.SourceCopy);
+            gfxScreenshot.CopyFromScreen(Screen2.Bounds.X, Screen2.Bounds.Y, 0, 0, Screen2.Bounds.Size, CopyPixelOperation.SourceCopy);
             pictureBox1.Image = bmpScreenshot;
         }
         private Timer timer1;
@@ -37,6 +36,7 @@ namespace KH_Screen_Viewer
         public Form1()
         {
             InitializeComponent();
+            secondaryScreen();
         }
 
 
@@ -62,9 +62,9 @@ namespace KH_Screen_Viewer
         }
 
         public Screen Screen2 = new object() as Screen;
-        public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2.
+        public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2. If there is only one screen then that screen will be Screen2.
         {
-            if (Screen.AllScreens.Length > 0)
+            if (Screen.AllScreens.Length > 1)
             {
                 for (int i = 0; i < Screen.AllScreens.Length; i++)
                 {
@@ -73,8 +73,13 @@ namespace KH_Screen_Viewer
                       Screen2 = Screen.AllScreens[i];
                     }
                 }
+
             }
-            return(Screen.PrimaryScreen);
+            else
+            {
+                Screen2 = Screen.PrimaryScreen;
+            }
+            return(Screen2);
         }
         private void ImageButton1_Click(object sender, EventArgs e)
         {
@@ -99,9 +104,9 @@ namespace KH_Screen_Viewer
             }
 
         }
-        private void setFormLocation(Form form, Screen screen)
+        private void setFormLocation(Form form, Screen Screen2)
         {
-            Rectangle bounds = screen.Bounds;
+            Rectangle bounds = Screen2.Bounds;
             form.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
         }
 
@@ -116,7 +121,6 @@ namespace KH_Screen_Viewer
             
             if (Application.OpenForms["Form2"] == null)
             {
-                secondaryScreen();
                 Form2 n = new Form2();
                 setFormLocation(n, Screen2);
                 n.Show();
