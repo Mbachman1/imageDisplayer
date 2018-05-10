@@ -53,6 +53,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form2";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.displayBox1)).EndInit();
             this.ResumeLayout(false);
 
