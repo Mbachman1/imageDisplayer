@@ -63,7 +63,7 @@ namespace KH_Screen_Viewer
         }
 
         public Screen Screen2 = new object() as Screen;
-        public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2. If there is only one screen then that screen will be Screen2.
+        public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2. If there is only one screen then a message box will appear to determine what the user wants to do next
         {
             if (Screen.AllScreens.Length > 1)
             {
@@ -79,8 +79,15 @@ namespace KH_Screen_Viewer
             }
             else
             {
-                MessageBox.Show("No secondary screen detected. Program will now close.");
-                Environment.Exit(0);
+               var result = MessageBox.Show("No secondary screen detected. Click OK to use primary screen(not recomended) or cancel to close.","", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    Screen2 = Screen.PrimaryScreen;
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
             }
             return(Screen2);
         }
