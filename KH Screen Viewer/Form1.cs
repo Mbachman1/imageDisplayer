@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 
 namespace KH_Screen_Viewer
@@ -71,13 +72,15 @@ namespace KH_Screen_Viewer
                     if (Screen.AllScreens[i].Primary == false)
                     {
                       Screen2 = Screen.AllScreens[i];
+                      break;
                     }
                 }
 
             }
             else
             {
-                Screen2 = Screen.PrimaryScreen;
+                MessageBox.Show("No secondary screen detected. Program will now close.");
+                Environment.Exit(0);
             }
             return(Screen2);
         }
@@ -104,7 +107,7 @@ namespace KH_Screen_Viewer
             }
 
         }
-        private void setFormLocation(Form form, Screen Screen2)
+            private void setFormLocation(Form form, Screen Screen2)
         {
             Rectangle bounds = Screen2.Bounds;
             form.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
@@ -159,8 +162,8 @@ namespace KH_Screen_Viewer
 
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
 
-                e.Effect = DragDropEffects.Copy;
-
+               e.Effect = DragDropEffects.Copy;
+            
         }
 
         private void ImageButton2_DragDrop(object sender, DragEventArgs e)
@@ -252,10 +255,12 @@ namespace KH_Screen_Viewer
 
         private void ImageButton4_DragEnter(object sender, DragEventArgs e)
         {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-
+            if (e.Data.GetDataPresent(DataFormats.Bitmap, true))
+            {
                 e.Effect = DragDropEffects.Copy;
+            }
+
+                
 
         }
         private void ImageButton4_Click(object sender, EventArgs e)

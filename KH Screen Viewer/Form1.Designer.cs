@@ -194,6 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 465);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(773, 503);
             this.Name = "Form1";
             this.Text = "KH Screen Viewer";
             this.TopMost = true;
