@@ -79,7 +79,7 @@ namespace KH_Screen_Viewer
             }
             else
             {
-               var result = MessageBox.Show("No secondary screen detected. Click OK to use primary screen(not recomended) or cancel to close.","", MessageBoxButtons.OKCancel);
+               var result = MessageBox.Show("No secondary screen detected. Click OK to use primary screen(not recomended) or cancel to close.","KH Screen Viewer", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
                     Screen2 = Screen.PrimaryScreen;
@@ -166,11 +166,14 @@ namespace KH_Screen_Viewer
 
         private void ImageButton1_DragEnter(object sender, DragEventArgs e)
         {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-
-               e.Effect = DragDropEffects.Copy;
-            
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                if (files[0].ToLower().EndsWith(".jpg") || (files[0].EndsWith(".png")) || (files[0].EndsWith(".jpeg")) || (files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+            }
         }
 
         private void ImageButton2_DragDrop(object sender, DragEventArgs e)
@@ -184,11 +187,14 @@ namespace KH_Screen_Viewer
 
         private void ImageButton2_DragEnter(object sender, DragEventArgs e)
         {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-
-                e.Effect = DragDropEffects.Copy;
-
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                if (files[0].ToLower().EndsWith(".jpg") || (files[0].EndsWith(".png")) || (files[0].EndsWith(".jpeg")) || (files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+            }
         }
         private void ImageButton2_Click(object sender, EventArgs e)
         {
@@ -223,11 +229,14 @@ namespace KH_Screen_Viewer
 
         private void ImageButton3_DragEnter(object sender, DragEventArgs e)
         {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-
-                e.Effect = DragDropEffects.Copy;
-
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                if (files[0].ToLower().EndsWith(".jpg") || (files[0].EndsWith(".png")) || (files[0].EndsWith(".jpeg")) || (files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+            }
         }
         private void ImageButton3_Click(object sender, EventArgs e)
         {
@@ -262,13 +271,14 @@ namespace KH_Screen_Viewer
 
         private void ImageButton4_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.Bitmap, true))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
             {
-                e.Effect = DragDropEffects.Copy;
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                if (files[0].ToLower().EndsWith(".jpg") || (files[0].EndsWith(".png")) || (files[0].EndsWith(".jpeg")) || (files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                 }
             }
-
-                
-
         }
         private void ImageButton4_Click(object sender, EventArgs e)
         {
