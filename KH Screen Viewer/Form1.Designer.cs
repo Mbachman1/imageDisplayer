@@ -30,7 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.closeDisplay = new System.Windows.Forms.Button();
             this.black = new System.Windows.Forms.Button();
@@ -38,9 +37,16 @@
             this.ImageButton2 = new System.Windows.Forms.Button();
             this.ImageButton3 = new System.Windows.Forms.Button();
             this.ImageButton4 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ClearButton1 = new System.Windows.Forms.Button();
+            this.ClearButton2 = new System.Windows.Forms.Button();
+            this.ClearButton3 = new System.Windows.Forms.Button();
+            this.ClearButton4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -49,17 +55,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.21053F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.78947F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(757, 465);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -67,34 +74,23 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(751, 385);
+            this.pictureBox1.Size = new System.Drawing.Size(751, 354);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 394);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "View Monitor 2";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.Controls.Add(this.closeDisplay);
             this.flowLayoutPanel1.Controls.Add(this.black);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton1);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton2);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton3);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton4);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(116, 394);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(116, 363);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(638, 68);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(638, 61);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // closeDisplay
@@ -187,6 +183,69 @@
             this.ImageButton4.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageButton4_DragDrop);
             this.ImageButton4.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageButton4_DragEnter);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 363);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(96, 17);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "View Monitor 2";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.ClearButton1);
+            this.flowLayoutPanel2.Controls.Add(this.ClearButton2);
+            this.flowLayoutPanel2.Controls.Add(this.ClearButton3);
+            this.flowLayoutPanel2.Controls.Add(this.ClearButton4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(322, 430);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(209, 3, 3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(432, 32);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // ClearButton1
+            // 
+            this.ClearButton1.Location = new System.Drawing.Point(3, 3);
+            this.ClearButton1.Name = "ClearButton1";
+            this.ClearButton1.Size = new System.Drawing.Size(97, 29);
+            this.ClearButton1.TabIndex = 0;
+            this.ClearButton1.Text = "Clear Image";
+            this.ClearButton1.UseVisualStyleBackColor = true;
+            this.ClearButton1.Click += new System.EventHandler(this.ClearButton1_Click);
+            // 
+            // ClearButton2
+            // 
+            this.ClearButton2.Location = new System.Drawing.Point(106, 3);
+            this.ClearButton2.Name = "ClearButton2";
+            this.ClearButton2.Size = new System.Drawing.Size(97, 29);
+            this.ClearButton2.TabIndex = 1;
+            this.ClearButton2.Text = "Clear Image";
+            this.ClearButton2.UseVisualStyleBackColor = true;
+            this.ClearButton2.Click += new System.EventHandler(this.ClearButton2_Click);
+            // 
+            // ClearButton3
+            // 
+            this.ClearButton3.Location = new System.Drawing.Point(209, 3);
+            this.ClearButton3.Name = "ClearButton3";
+            this.ClearButton3.Size = new System.Drawing.Size(97, 29);
+            this.ClearButton3.TabIndex = 2;
+            this.ClearButton3.Text = "Clear Image";
+            this.ClearButton3.UseVisualStyleBackColor = true;
+            this.ClearButton3.Click += new System.EventHandler(this.ClearButton3_Click);
+            // 
+            // ClearButton4
+            // 
+            this.ClearButton4.Location = new System.Drawing.Point(312, 3);
+            this.ClearButton4.Name = "ClearButton4";
+            this.ClearButton4.Size = new System.Drawing.Size(97, 29);
+            this.ClearButton4.TabIndex = 3;
+            this.ClearButton4.Text = "Clear Image";
+            this.ClearButton4.UseVisualStyleBackColor = true;
+            this.ClearButton4.Click += new System.EventHandler(this.ClearButton4_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -203,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,6 +279,11 @@
         private System.Windows.Forms.Button ImageButton2;
         private System.Windows.Forms.Button ImageButton3;
         private System.Windows.Forms.Button ImageButton4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button ClearButton1;
+        private System.Windows.Forms.Button ClearButton2;
+        private System.Windows.Forms.Button ClearButton3;
+        private System.Windows.Forms.Button ClearButton4;
     }
 }
 

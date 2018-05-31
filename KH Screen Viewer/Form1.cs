@@ -57,10 +57,6 @@ namespace KH_Screen_Viewer
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         public Screen Screen2 = new object() as Screen;
         public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2. If there is only one screen then a message box will appear to determine what the user wants to do next
@@ -173,6 +169,10 @@ namespace KH_Screen_Viewer
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
             }
         }
 
@@ -193,6 +193,10 @@ namespace KH_Screen_Viewer
                 if (files[0].ToLower().EndsWith(".jpg") || (files[0].EndsWith(".png")) || (files[0].EndsWith(".jpeg")) || (files[0].EndsWith(".bmp")))
                 {
                     e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
                 }
             }
         }
@@ -236,6 +240,10 @@ namespace KH_Screen_Viewer
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
             }
         }
         private void ImageButton3_Click(object sender, EventArgs e)
@@ -278,6 +286,10 @@ namespace KH_Screen_Viewer
                 {
                     e.Effect = DragDropEffects.Copy;
                  }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
             }
         }
         private void ImageButton4_Click(object sender, EventArgs e)
@@ -301,6 +313,28 @@ namespace KH_Screen_Viewer
                 n.Show();
                 n.displayBox1.Image = ImageButton4.BackgroundImage;
             }
+        }
+
+
+
+        private void ClearButton1_Click(object sender, EventArgs e)
+        {
+            ImageButton1.BackgroundImage = null;
+        }
+
+        private void ClearButton2_Click(object sender, EventArgs e)
+        {
+            ImageButton2.BackgroundImage = null;
+        }
+
+        private void ClearButton3_Click(object sender, EventArgs e)
+        {
+            ImageButton3.BackgroundImage = null;
+        }
+
+        private void ClearButton4_Click(object sender, EventArgs e)
+        {
+            ImageButton4.BackgroundImage = null;
         }
     }
 }
