@@ -61,6 +61,8 @@ namespace KH_Screen_Viewer
         public Screen Screen2 = new object() as Screen;
         public object secondaryScreen()     //This finds the first non primary screen and sets it as Screen2. If there is only one screen then a message box will appear to determine what the user wants to do next
         {
+
+            
             if (Screen.AllScreens.Length > 1)
             {
                 for (int i = 0; i < Screen.AllScreens.Length; i++)
@@ -92,8 +94,15 @@ namespace KH_Screen_Viewer
         }
         private void ImageButton1_Click(object sender, EventArgs e)
         {
-             backform.Show();
-             backform.displayBox1.Image = ImageButton1.BackgroundImage;
+            if (ImageButton1.BackgroundImage == null)
+            {
+                return;
+            }
+            else
+            {
+                backform.Show();
+                backform.displayBox1.Image = ImageButton1.BackgroundImage;
+            }
         }
             private void setFormLocation(Form form, Screen Screen2)
         {
@@ -210,19 +219,14 @@ namespace KH_Screen_Viewer
         }
         private void ImageButton3_Click(object sender, EventArgs e)
         {
+ 
+            
             if (ImageButton3.BackgroundImage == null)
-            {
-                return;
-            }
-            else
-            {
-                if (ImageButton3.BackgroundImage == null)
                 {
                     return;
                 }
-                backform.Show();
-                backform.displayBox1.Image = ImageButton3.BackgroundImage;
-            }
+            backform.Show();
+            backform.displayBox1.Image = ImageButton3.BackgroundImage;
         }
         private void ImageButton4_DragDrop(object sender, DragEventArgs e)
         {
@@ -267,22 +271,50 @@ namespace KH_Screen_Viewer
 
         private void ClearButton1_Click(object sender, EventArgs e)
         {
-            ImageButton1.BackgroundImage = null;
+            if (backform.displayBox1.Image == ImageButton1.BackgroundImage)
+            {
+                return;
+            }
+            else
+            {
+                ImageButton1.BackgroundImage = null;
+            }
         }
 
         private void ClearButton2_Click(object sender, EventArgs e)
         {
-            ImageButton2.BackgroundImage = null;
+            if (backform.displayBox1.Image == ImageButton2.BackgroundImage)
+            {
+                return;
+            }
+            else
+            {
+                ImageButton2.BackgroundImage = null;
+            }
         }
 
         private void ClearButton3_Click(object sender, EventArgs e)
         {
-            ImageButton3.BackgroundImage = null;
+            if (backform.displayBox1.Image == ImageButton3.BackgroundImage)
+            {
+                return;
+            }
+            else
+            {
+                ImageButton3.BackgroundImage = null;
+            }
         }
 
         private void ClearButton4_Click(object sender, EventArgs e)
         {
-            ImageButton4.BackgroundImage = null;
+            if (backform.displayBox1.Image == ImageButton4.BackgroundImage)
+            {
+                return;
+            }
+            else
+            {
+                ImageButton4.BackgroundImage = null;
+            }
         }
     }
 }
