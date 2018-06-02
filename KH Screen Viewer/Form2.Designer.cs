@@ -28,8 +28,11 @@
         /// </summary>
         public void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.displayBox1 = new System.Windows.Forms.PictureBox();
+            this.VLCPlugin = new AxAXVLC.AxVLCPlugin2();
             ((System.ComponentModel.ISupportInitialize)(this.displayBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VLCPlugin)).BeginInit();
             this.SuspendLayout();
             // 
             // displayBox1
@@ -43,11 +46,21 @@
             this.displayBox1.TabIndex = 0;
             this.displayBox1.TabStop = false;
             // 
+            // VLCPlugin
+            // 
+            this.VLCPlugin.Enabled = true;
+            this.VLCPlugin.Location = new System.Drawing.Point(0, 0);
+            this.VLCPlugin.Name = "VLCPlugin";
+            this.VLCPlugin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VLCPlugin.OcxState")));
+            this.VLCPlugin.Size = new System.Drawing.Size(800, 449);
+            this.VLCPlugin.TabIndex = 1;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.VLCPlugin);
             this.Controls.Add(this.displayBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
@@ -55,6 +68,7 @@
             this.Text = "Form2";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.displayBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VLCPlugin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,5 +76,6 @@
         #endregion
 
         public System.Windows.Forms.PictureBox displayBox1;
+        public AxAXVLC.AxVLCPlugin2 VLCPlugin;
     }
 }

@@ -230,7 +230,6 @@ namespace KH_Screen_Viewer
         }
         private void ImageButton4_DragDrop(object sender, DragEventArgs e)
         {
-
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
             Image img = new Bitmap(Bitmap.FromFile(files[0]));
             ImageButton4.BackgroundImage = img;
@@ -315,6 +314,44 @@ namespace KH_Screen_Viewer
             {
                 ImageButton4.BackgroundImage = null;
             }
+        }
+
+        private void videoButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            backform.VLCPlugin.playlist.add(openFileDialog1.SafeFileName);
+
+        }
+
+        private void videoButton_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                if (files[0].ToLower().EndsWith(".mp4") || (files[0].EndsWith(".wmv")) || (files[0].EndsWith(".avi")) || (files[0].EndsWith(".mov")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+        public string vid;
+        public void videoButton_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+            string vid = files[0];
+            videoButton.Text = vid;
+            Console.WriteLine(vid);
+            backform.VLCPlugin.playlist.add(vid.ToString(), vid, null);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            backform.Show();
+            backform.VLCPlugin.playlist.play();
         }
     }
 }

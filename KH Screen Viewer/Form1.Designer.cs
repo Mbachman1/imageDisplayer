@@ -43,21 +43,26 @@
             this.ClearButton2 = new System.Windows.Forms.Button();
             this.ClearButton3 = new System.Windows.Forms.Button();
             this.ClearButton4 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.videoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.22985F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.77014F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -88,9 +93,9 @@
             this.flowLayoutPanel1.Controls.Add(this.ImageButton2);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton3);
             this.flowLayoutPanel1.Controls.Add(this.ImageButton4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(116, 363);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(140, 363);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(638, 61);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(614, 61);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // closeDisplay
@@ -172,7 +177,7 @@
             this.ImageButton4.AutoSize = true;
             this.ImageButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ImageButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImageButton4.Location = new System.Drawing.Point(518, 3);
+            this.ImageButton4.Location = new System.Drawing.Point(3, 65);
             this.ImageButton4.Name = "ImageButton4";
             this.ImageButton4.Size = new System.Drawing.Size(97, 56);
             this.ImageButton4.TabIndex = 6;
@@ -200,10 +205,10 @@
             this.flowLayoutPanel2.Controls.Add(this.ClearButton2);
             this.flowLayoutPanel2.Controls.Add(this.ClearButton3);
             this.flowLayoutPanel2.Controls.Add(this.ClearButton4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(322, 430);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(346, 430);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(209, 3, 3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(432, 32);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(408, 32);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // ClearButton1
@@ -238,13 +243,45 @@
             // 
             // ClearButton4
             // 
-            this.ClearButton4.Location = new System.Drawing.Point(312, 3);
+            this.ClearButton4.Location = new System.Drawing.Point(3, 38);
             this.ClearButton4.Name = "ClearButton4";
             this.ClearButton4.Size = new System.Drawing.Size(97, 29);
             this.ClearButton4.TabIndex = 3;
             this.ClearButton4.Text = "Clear Image";
             this.ClearButton4.UseVisualStyleBackColor = true;
             this.ClearButton4.Click += new System.EventHandler(this.ClearButton4_Click);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.videoButton);
+            this.flowLayoutPanel3.Controls.Add(this.button1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 430);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(131, 32);
+            this.flowLayoutPanel3.TabIndex = 4;
+            // 
+            // videoButton
+            // 
+            this.videoButton.AllowDrop = true;
+            this.videoButton.Location = new System.Drawing.Point(3, 3);
+            this.videoButton.Name = "videoButton";
+            this.videoButton.Size = new System.Drawing.Size(75, 23);
+            this.videoButton.TabIndex = 0;
+            this.videoButton.Text = "Video";
+            this.videoButton.UseVisualStyleBackColor = true;
+            this.videoButton.Click += new System.EventHandler(this.videoButton_Click);
+            this.videoButton.DragDrop += new System.Windows.Forms.DragEventHandler(this.videoButton_DragDrop);
+            this.videoButton.DragEnter += new System.Windows.Forms.DragEventHandler(this.videoButton_DragEnter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(84, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -263,6 +300,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -284,6 +322,9 @@
         private System.Windows.Forms.Button ClearButton2;
         private System.Windows.Forms.Button ClearButton3;
         private System.Windows.Forms.Button ClearButton4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button videoButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
