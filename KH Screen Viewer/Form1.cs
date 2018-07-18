@@ -109,13 +109,6 @@ namespace KH_Screen_Viewer
             Rectangle bounds = Screen2.Bounds;
             form.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
         }
-
-        public void new_Form()
-        {
-            Form2 n = new Form2();
-
-        }
-
         private void black_Click(object sender, EventArgs e)
         {
             
@@ -132,6 +125,7 @@ namespace KH_Screen_Viewer
             if (backform.Visible == true)
             {
                 backform.Hide();
+                backform.displayBox1.Image = null;
             }
         }
         public Bitmap img = null;
@@ -255,14 +249,14 @@ namespace KH_Screen_Viewer
         private void ImageButton4_Click(object sender, EventArgs e)
         {
             {
-                if (ImageButton2.BackgroundImage == null)
+                if (ImageButton4.BackgroundImage == null)
                 {
                     return;
                 }
                 else
                 {
                     backform.Show();
-                    backform.displayBox1.Image = ImageButton2.BackgroundImage;
+                    backform.displayBox1.Image = ImageButton4.BackgroundImage;
                 }
             }
         }
